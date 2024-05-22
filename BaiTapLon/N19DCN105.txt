@@ -1,0 +1,39 @@
+Word: address
+Word Type: noun
+Meaning: the number of the house, name of the road
+Example: a change of address
+Word Type: verb
+Meaning: to speak or write to someone, or to direct information to someone
+Example: The First Lady addressed the meeting briefly.
+
+Word: bear
+Word Type: verb
+Meaning: to accept, tolerate, or endure something, especially something unpleasant
+Example: Tell me now! I can't bear the suspense!
+
+Word: halt
+Word Type: noun
+Meaning: an occasion when something stops moving or happening
+Example: the recent halt in production
+Word Type: verb
+Meaning: to (cause to) stop moving or doing something or happening
+Example: "Halt!" called the guard. "You can't go any further without a permit."
+
+Word: hello
+Word Type: noun
+Meaning: used when meeting or greeting someone
+Example: Hello, Paul. I haven't seen you for ages
+
+Word: provide
+Word Type: verb
+Meaning: to give someone something that they need
+Example: All meals are provided at no additional cost.
+
+Word: work
+Word Type: noun
+Meaning: an activity, such as a job, that a person uses physical or mental effort to do, usually for money
+Example: I've got so much work to do.
+Word Type: noun
+Meaning: something created as a result of effort, especially a painting, book, or piece of music
+Example: The museum has many works by Picasso as well as other modern painters.
+

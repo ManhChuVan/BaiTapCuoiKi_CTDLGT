@@ -60,22 +60,44 @@ class Dictionary:
         self.entries = []
 
     def add_new_entry(self):
-        word = input("Enter the word: ")
+        while True:
+            word = input("Enter the word: ").strip()
+            if not word:
+                print("Word cannot be blank. Please enter a valid word.")
+                continue
+            break
+
         existing_entry = next((entry for entry in self.entries if entry.word == word), None)
+        
+        if existing_entry is None:
+            existing_entry = DictionaryEntry(word)
+            self.entries.append(existing_entry)
 
         while True:
-            word_type = input("Enter the word type (noun, verb, adjective, etc.): ")
-            meaning = input("Enter the meaning: ")
-            example = input("Enter an example: ")
-
-            if existing_entry:
-                existing_entry.add_meaning(word_type, meaning, example)
-            else:
-                entry = DictionaryEntry(word)
-                entry.add_meaning(word_type, meaning, example)
-                self.entries.append(entry)
-
-            more = input("Do you want to add another meaning for this word? (yes/no): ").lower()
+            while True:
+                word_type = input("Enter the word type: ").strip()
+                if not word_type:
+                    print("Word type cannot be blank. Please enter a valid word type.")
+                    continue
+                break
+            
+            while True:
+                meaning = input("Enter the meaning: ").strip()
+                if not meaning:
+                    print("Meaning cannot be blank. Please enter a valid meaning.")
+                    continue
+                break
+            
+            while True:
+                example = input("Enter an example: ").strip()
+                if not example:
+                    print("Example cannot be blank. Please enter a valid example.")
+                    continue
+                break
+            
+            existing_entry.add_meaning(word_type, meaning, example)
+            
+            more = input("Do you want to add another meaning for this word? (yes/no): ").lower().strip()
             if more != 'yes':
                 break
 
@@ -87,7 +109,7 @@ class Dictionary:
         return False
 
     def delete_entry(self, word):
-        filename = "N19DCCN105.txt"
+        filename = "N19DCN105.txt"
         updated_entries = []
 
         with open(filename, 'r') as f:
@@ -121,7 +143,7 @@ class Dictionary:
         return None
 
     def save_to_file(self):
-        filename = "N19DCCN105.txt"
+        filename = "N19DCN105.txt"
         with open(filename, 'r') as f:
             existing_lines = f.readlines()
 
@@ -163,7 +185,7 @@ class Dictionary:
         return filename
 
     def load_from_file(self):
-        filename = "N19DCCN105.txt"
+        filename = "N19DCN105.txt"
         with open(filename, 'r') as f:
             lines = f.readlines()
             self.entries = self._load_entries_from_lines(lines)
@@ -222,7 +244,15 @@ def main():
                 choice2 = input("Enter your choice: ")
 
                 if choice2 == '1':
-                    word = input("Enter the word to remove: ")
+                    # word = input("Enter the word to remove: ")
+
+                    while True:
+                        word = input("Enter the word to remove: ").strip()
+                        if not word:
+                            print("Word cannot be blank. Please enter a valid word.")
+                            continue
+                        break
+
                     if dictionary.remove_entry(word):
                         print(f"'{word}' has been successfully removed from the dictionary.")
                         break
@@ -230,7 +260,14 @@ def main():
                         print(f"'{word}' does not exist in the dictionary.")
 
                 elif choice2 == '2':
-                    word = input("Enter the word of the entry to be deleted from the dictionary from the file: ")
+                    # word = input("Enter the word of the entry to be deleted from the dictionary from the file: ")
+                    while True:
+                        word = input("Enter the word of the entry to be deleted from the dictionary from the file: ").strip()
+                        if not word:
+                            print("Word cannot be blank. Please enter a valid word.")
+                            continue
+                        break
+
                     if dictionary.delete_entry(word):
                         print(f"'{word}' has been successfully removed from the dictionary in file.")
                         break
@@ -244,11 +281,18 @@ def main():
                     print('Invalid choice. Please choose 1, 2, or 3.')
 
         elif choice == '3':
-            word = input("Enter the word to look up: ")
+            # word = input("Enter the word to look up: ")
+            while True:
+                word = input("Enter the word to look up: ").strip()
+                if not word:
+                    print("Word cannot be blank. Please enter a valid word.")
+                    continue
+                break
+
             meanings = dictionary.lookup(word)
             if meanings:
                 for word_type, linked_list in meanings.items():
-
+                    
                     current = linked_list.head
                     while current:
                         print(f"Word Type: {word_type}")
