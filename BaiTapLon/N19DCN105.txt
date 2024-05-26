@@ -10,6 +10,12 @@ Word: bear
 Word Type: verb
 Meaning: to accept, tolerate, or endure something, especially something unpleasant
 Example: Tell me now! I can't bear the suspense!
+Word Type: verb
+Meaning: to accept, tolerate, or endure something, especially something unpleasant
+Example: The strain must have been enormous but she bore it well.
+Word Type: verb
+Meaning: to have or continue to have something
+Example: Their baby bears a strong resemblance to strong to its grandfather.
 
 Word: halt
 Word Type: noun
